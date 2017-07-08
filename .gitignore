@@ -1,0 +1,7 @@
+.idea
+*.*~
+node_modules
+*.jpg
+*.jpeg
+*.png
+*.gif
