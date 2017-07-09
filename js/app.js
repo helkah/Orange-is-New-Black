@@ -3,8 +3,8 @@ $(function(){
   ////Variables////////
     
   var uvIndexElement = $("#uvIndex");
-  var latitudeInput = $(".gllpLatitude");
-  var longitudeInput = $(".gllpLongitude");
+  var latitudeInput = $("#gllpLatitude");
+  var longitudeInput = $("#gllpLongitude");
     
   ////FUNCTIONS/////
     
@@ -13,8 +13,8 @@ $(function(){
     
   function loadUvIndex() {
       
-            var latitudeValue = (Math.round((latitudeInput.val())*100))/100;
-            var longitudeValue = (Math.round((longitudeInput.val())*100))/100;
+            var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
+            var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
             var urlAdress = 'http://api.openweathermap.org/data/2.5/uvi?lat=';
             var apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
       
