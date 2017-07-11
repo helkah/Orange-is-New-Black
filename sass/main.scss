@@ -1,8 +1,11 @@
 @import "vendor/google-maps-latlon-picker";
+@import "partials/fonts";
+@import "partials/reset";
 
 body{
     margin: 0;
     padding: 0;
+    background-color: #7DCDCD;
 }
 
 
@@ -16,16 +19,31 @@ button{
     background-image: url(../images/TrumpSign_confidnet.png);
     margin: auto;
     position: relative;
+ 
 }
+  
 
 #donaldSpeech{
-    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
     width: 300px;
     text-align: center;
     margin: auto;
     padding:25px;
-    position: absolute;
-    top: 320px;
-    left: 150px;
 
+
+    
+
+}
+
+h1{
+    font-family: 'Special Elite', cursive;
+    font-size: 66px;
+    span{
+        color: orangered;
+    }
+}
+
+.uvWidget{
+    height: 200px;
+    width: 200px;
 }
