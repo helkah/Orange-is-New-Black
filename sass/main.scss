@@ -7,7 +7,6 @@
 
 
 
-
 header, header .container{
     background-color: $orange;
     height: 15vh;
@@ -41,7 +40,7 @@ h1{
 }
 
 .main{
-    margin-bottom: 11vh;
+    //background-color: aqua;
 }
 @keyframes stand{
     from {
@@ -62,10 +61,7 @@ h1{
     
 }
 
-button{
-    display: block;
-    margin: auto;
-}
+
 .donaldSign{
     width: 100%;
     height: 42%;
@@ -103,7 +99,7 @@ button{
 
 .flip-container, .front, .back {
 	width: 100%;
-	height: 85vh;
+	height: 80vh;
 }
 
 /* flip speed goes here */
