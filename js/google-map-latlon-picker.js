@@ -13,6 +13,7 @@ function init() {
     zoom: 8, // How zoomed in you want the map to start at (required)
     center: latLng,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
+    scrollwheel: false,  
     // How to style the map. 
     // This is where I paste style found on Snazzy Maps  
     styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"color":"#f6b221"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"color":"#f6b221"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]

@@ -5,41 +5,51 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Orange is New Black</title>
         <script src="js/jquery-2.1.1.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASBhfF254aUhQhTh3guanAppi26V4lNOo&libraries=places"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Oswald|Special+Elite" rel="stylesheet">
         <script src="js/google-map-latlon-picker.js"></script>
-        <script src="http://bernii.github.io/gauge.js/dist/gauge.coffee"></script>
-        <script src="js/modules/gauge.js"></script>
+        <!--<script src="js/gauge-min.js"></script>
+        <script src="js/modules/gauge.js"></script>-->
         <script src="js/main.js"></script>
         
     </head>
     <body>
         <header>
             <div class="container">
-                <h1><span>ORANGE</span> IS THE NEW BLACK</h1>
-                <div class="uvIndex"> UV Index </div>
+                    <h1><span class=orange>ORANGE</span><br>
+                        <span class=smallLeters>IS THE NEW</span> BLACK</h1>
+                    <div class="movingTrump"></div>
             </div>    
         </header>
-        <section class="gllpLatlonPicker">
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-            <div id="gllpMap"></div>
-            <div id="gllpLatitude"></div>
-            <div id="gllpLongitude"></div>  
+        <section class="main container flip-container">
+            <div class="flipper">
+                <article class="gllpLatlonPicker back">    
+                    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                    <div id="gllpMap"></div>
+                    <div id="gllpLatitude" hidden></div>
+                    <div id="gllpLongitude" hidden></div>
+                    <button id="showTrump">Click Here</button>
+                </article>
+                <article class="donaldTrump front">
+                    <div class="donaldSign">
+                        Hello World! Check out todays best places for sunbathing!<br> Pick the place on the Map.
+                    </div>    
+                    <button id="showMap">Show Map</button>
+                </article>
+            </div>    
         </section>
-        <section class="donaldTrump">
-            <div class="donaldSign"></div>
-            <div id="donaldSpeech">Hello World! Check out todays best places for sunbathing! Pick the place and click the button. </div>
-            <button>Click Here</button>
-        </section>
-        <section class="uvWidget">
-            <div id="gauge"></div>
-        </section>
-        <section class="uvProtection">
-        </section> 
+        <section class="asaid container">
+                <article class="uvWidget">
+                    <canvas id="foo"></canvas>
+                </article>
+                <article class="uvProtection">
+                    Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+                </article>
+        </section>    
         <footer>
-            <div class="container"></div>
-              <img src="images/icons8-Donald%20Trump-50.png" alt="Donald Trump Logo">
+            <div class="container">
+            </div>    
         </footer>
         
     </body>

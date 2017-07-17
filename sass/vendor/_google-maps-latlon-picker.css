@@ -1,11 +1,14 @@
-#gllpMap{ 
-    width: 100%; 
-    height: 100%; 
+.gllpLatlonPicker{ 
+    padding: 0px;
+    height: 100%;
+    width: 100%;
 }
 
-.gllpLatlonPicker{ 
-    margin: 20px 0;
-    padding: 0px;
-    width: 100vw;
-    height: 50vh;
+
+#gllpMap{ 
+    width: 100%; 
+    height: 100%;
+    display: block;
+
 }
+

@@ -15,7 +15,7 @@ var opts = {
   generateGradient: true,
   highDpiSupport: true     // High resolution support
 };
-var target = document.getElementById('gauge'); // your canvas element
+var target = document.getElementById('foo'); // your canvas element
 var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
 gauge.maxValue = 3000; // set max gauge value
 gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0

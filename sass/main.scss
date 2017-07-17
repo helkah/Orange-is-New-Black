@@ -1,49 +1,136 @@
+@import "modules/all";
+@import "modules/colors";
 @import "vendor/google-maps-latlon-picker";
 @import "partials/fonts";
 @import "partials/reset";
+@import "partials/buttons";
 
-body{
-    margin: 0;
-    padding: 0;
-    background-color: #7DCDCD;
+
+
+
+header, header .container{
+    background-color: $orange;
+    height: 15vh;
 }
 
+.sticky{
+    position: fixed;
+    z-index: 1;
+}
+
+.container{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    font-size: 7vw;
+    .orange{
+        color: $white;
+        font-size: 4vw;
+    }
+    .smallLeters{
+        font-size: 2vw;
+    }
+}
+
+.main{
+    margin-bottom: 11vh;
+}
+@keyframes stand{
+    from {
+        background-position-x: 0;
+    }
+1   to {
+        background-position-x: -1536px;
+    }
+}
+
+.movingTrump{
+    display: none;
+    width: 256px;
+    height: 256px;
+    background-image: url(../images/trump_iddle.png);
+    background-position: 0 0;
+    animation: stand 0.8s steps(6) infinite;    
+    
+}
 
 button{
     display: block;
     margin: auto;
 }
 .donaldSign{
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 42%;
     background-image: url(../images/TrumpSign_confidnet.png);
-    margin: auto;
-    position: relative;
- 
-}
-  
-
-#donaldSpeech{
-    font-family: 'Oswald', sans-serif;
-    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
     text-align: center;
-    margin: auto;
-    padding:25px;
-
-
+    padding-top: 67%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3vw;
     
 
-}
-
-h1{
-    font-family: 'Special Elite', cursive;
-    font-size: 66px;
-    span{
-        color: orangered;
-    }
+    
 }
 
 .uvWidget{
     height: 200px;
     width: 200px;
+}
+
+.uvProtection{
+    font-size: 4vw;
+    font-family: 'Oswald', sans-serif;
+    width: 800px;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane*/
+.hover {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 85vh;
+}
+
+/* flip speed goes here */
+.flipper {
+    width: 100%;
+    height: 100%;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back,  {
+	backface-visibility: hidden;
+    position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
