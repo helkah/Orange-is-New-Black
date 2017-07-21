@@ -28,39 +28,45 @@ $(function(){
   }
     
   function showWhatDonaldSay(givenUvIndex){
-        var uVIndex = givenUvIndex;
-        console.log(uVIndex);
+        var uVIndexValue = givenUvIndex;
+        console.log(uVIndexValue);
+        $("#uvIndex").text(uVIndexValue);
         
         var donaldImageElement = $('.donaldSign')
       
-        if (uVIndex<=2){
-            donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)').text("This place sucks!");
+        if (uVIndexValue<=2){
+            donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
+            donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
                 
             };
         
       
-        if (uVIndex>2 && uVIndex<=5){
+        if (uVIndexValue>2 && uVIndexValue<=5){
             
-             donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)').text("This place sucks!");
+             donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
+             donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
     
             };
                 
       
-        if (uVIndex>5 && uVIndex<=7){
+        if (uVIndexValue>5 && uVIndexValue<=7){
              
-            donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)').text("Not even close!");
+            donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)');
+                donaldImageElement.find("p").text("Not even close! UV Index is " + uVIndexValue);
                 
             };
       
-        if (uVIndex>7 && uVIndex<=10){
+        if (uVIndexValue>7 && uVIndexValue<=10){
             
-            donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)').text("Hell yeah!");
+            donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
+                donaldImageElement.find("p").text("Hell yeah! UV Index is " + uVIndexValue);
             
              };     
       
-        if(uVIndex>10){
+        if(uVIndexValue>10){
            
-           donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)').text("We`re goona die!")
+           donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
+            donaldImageElement.find("p").text("We`re goona die! UV Index is " + uVIndexValue)
            
             };
                   
@@ -117,4 +123,69 @@ $(window).on('scroll',function(event){
                  $('.flipper').toggleClass('hover');
                 console.log($('.flipper'))
                  });    
+
+
+
+////////Hamburger menu EVENTS///////
+
+$('.hamburger').on('click', function(){
+    console.log("Działa");
+    $(this).animate({
+        opacity:0
+        },300, function(){
+        $(this).css('visibility','hidden');
+    });
+    $(this).next().next().next().css({
+        opacity: 0.0, 
+        visibility: "visible"
+        }).animate({
+        opacity: 1
+        }, 300);
+    $('.dropDownMenu').slideDown();
+})
+
+$('.cross').on('click', function(){
+    console.log("Działa");
+    $(this).animate({
+        opacity:0
+        },300, function(){
+        $(this).css('visibility','hidden');
+    });
+    $(this).prev().prev().prev().css({
+        opacity: 0.0, 
+        visibility: "visible"
+        }).animate({
+        opacity: 1
+        }, 300);
+    $('.dropDown').slideUp();
+})
+
+/////////Event for dropdown Menu/////////////
+
+$('li').on('click', function(){
+    var scrollPlaceid = $(this).children().attr('href');
+    
+    var menuHeight = $('.dropDownMenu').height();
+    var headerHeight = $('header').height();
+                
+   $('html,body').animate({
+        scrollTop: ($(scrollPlaceid).offset().top) - menuHeight - headerHeight,
+    },1000)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

@@ -1,6 +1,8 @@
-$orange:#FF9900;
-$white:#E6E6CC;
-$blue:#6699CC;
-$grey:#9C9284;
+$primary-color:#FF9900;
+$secondary-color: #EFF9F9;
 
-$main-color:#FF9900;
+$layout-colors: (
+    "header": $primary-color;
+    "body": $secondary-color;
+    "footer": $main-color; 
+)

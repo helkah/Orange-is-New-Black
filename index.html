@@ -9,19 +9,28 @@
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Oswald|Special+Elite" rel="stylesheet">
         <script src="js/google-map-latlon-picker.js"></script>
-        <!--<script src="js/gauge-min.js"></script>
-        <script src="js/modules/gauge.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="js/my-gauge-chart.js"></script>
         <script src="js/main.js"></script>
         
     </head>
     <body>
         <header>
             <div class="container">
-                    <h1><span class=orange>ORANGE</span><br>
+                    <button class="hamburger">&#9776;</button>    
+                    <h1><span class=orange>ORANGE</span>
                         <span class=smallLeters>IS THE NEW</span> BLACK</h1>
                     <div class="movingTrump"></div>
+                    <button class="cross">&#735;</button>
+                    <nav class="dropDownMenu">
+                        <ul>
+                            <li><a href="#uvWidget">UV INDEX SCALE</a></li>
+                            <li><a href="#protection">SUN PROTECTION RULES</a></li>
+                        </ul>
+                    </nav>
             </div>    
         </header>
+        
         <section class="main container flip-container">
             <div class="flipper">
                 <article class="gllpLatlonPicker back">    
@@ -29,26 +38,80 @@
                     <div id="gllpMap"></div>
                     <div id="gllpLatitude" hidden></div>
                     <div id="gllpLongitude" hidden></div>
+                    <div id="uvIndex" hidden></div>
                     <div class="orangeButtonWrap"><button class="orange" id="showTrump">Click Here</button></div>
                 </article>
                 <article class="donaldTrump front">
                     <div class="donaldSign">
-                        Hello World! Check out todays best places for sunbathing!<br> Pick the place on the Map.
+                        <p>
+                            Hello World! Check out todays best places for sunbathing!<br> Pick the place on the Map.
+                        </p>
                     </div>    
-                    <button id="showMap">Show Map</button>
+                    <button id="showMap" class="orange">Show Map</button>
                 </article>
             </div>    
         </section>
         <section class="asaid container">
-                <article class="uvWidget">
-                    <canvas id="foo"></canvas>
+                <article id="uvWidget">
+                    <h2>UV Index Scale</h2>
+                    <canvas id="myChart"></canvas>
                 </article>
-                <article class="uvProtection">
-                    Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+                <article class="uvProtection" id="protection">
+                    <h2>Sun Protection Rules</h2>
+                    <h3 id="low">0 to 2: Low</h3>
+                    <div>
+                        <div>A UV Index reading of 0 to 2 means low danger from the sun's UV rays for the average person.</div>
+                        <ul>
+                            <li>Wear sunglasses on bright days.</li>
+                            <li>If you burn easily, cover up and use broad spectrum SPF 30+ sunscreen.</li>
+                            <li>vWatch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
+                        </ul>
+                    </div>
+                    <h3 id="moderate">3 to 5: Moderate</h3>
+                    <div>
+                        <div>A UV Index reading of 3 to 5 means moderate risk of harm from unprotected sun exposure</div>
+                        <ul>
+                            <li>Stay in shade near midday when the sun is strongest.</li>
+                            <li>If outdoors, wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses</li>
+                            <li>Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. </li>
+                        </ul>
+                    </div>
+            
+                    <h3 id="high">6 to 7: High</h3>
+                    <div>
+                        <div>A UV Index reading of 6 to 7 means high risk of harm from unprotected sun exposure. Protection against skin and eye damage is needed.</div>
+                        <ul>
+                            <li>Reduce time in the sun between 10 a.m. and 4 p.m.</li>
+                            <li>If outdoors, seek shade and wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses.</li>
+                            <li>Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating.</li>
+                            <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
+                        </ul>
+                    </div>
+                    <h3 id="veryHigh">8 to 10: Very High</h3>
+                    <div>
+                        <div>A UV Index reading of 8 to 10 means very high risk of harm from unprotected sun exposure. Take extra precautions because unprotected skin and eyes will be damaged and can burn quickly.</div>
+                        <ul>
+                            <li>Minimize sun exposure between 10 a.m. and 4 p.m.</li>
+                            <li>If outdoors, seek shade and wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses.</li>
+                            <li>Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. </li>
+                            <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure</li>
+                        </ul>
+                    </div>
+                    <h3 id="extreme">11+: Extreme</h3>
+                    <div>
+                        <div>A UV Index reading of 11 or more means extreme risk of harm from unprotected sun exposure. Take all precautions because unprotected skin and eyes can burn in minutes.</div>
+                        <ul>
+                            <li>Try to avoid sun exposure between 10 a.m. and 4 p.m.</li>
+                            <li>If outdoors, seek shade and wear protective clothing, a wide-brimmed hat, and UV-blocking sunglasses.</li>
+                            <li>Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating.</li>
+                            <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
+                        </ul>
+                    </div>
                 </article>
         </section>    
         <footer>
             <div class="container">
+                <span>&#64;2017 <a href="#">Orange is a New Black</a></span>
             </div>    
         </footer>
         

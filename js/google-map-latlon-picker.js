@@ -38,7 +38,8 @@ function init() {
     
  marker.addListener('dragend', function() {
   
-    marker.setAnimation(google.maps.Animation.BOUNCE); 
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    setTimeout(function(){ marker.setAnimation(null); }, 2100); 
 });    
 
 
@@ -71,7 +72,6 @@ var geocoder = new google.maps.Geocoder(); //access the Google Maps API geocodin
           searchBox.setBounds(map.getBounds());
     });
     
-    var markers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener('places_changed', function() {
@@ -81,11 +81,9 @@ var geocoder = new google.maps.Geocoder(); //access the Google Maps API geocodin
             return;
           }
 
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
+          // Clear out the old marker
             marker.setMap(null);
-          });
-          markers = []
+          
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
@@ -95,12 +93,15 @@ var geocoder = new google.maps.Geocoder(); //access the Google Maps API geocodin
             }
 
             // Create a marker for each place.
-            markers.push(new google.maps.Marker({
+            marker = new google.maps.Marker({
               map: map,
               title: place.name,
               position: place.geometry.location,
               draggable: true    
-            }));
+            });
+              
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function(){ marker.setAnimation(null); }, 2100);  
 
           
             if (place.geometry.viewport) {
@@ -110,6 +111,12 @@ var geocoder = new google.maps.Geocoder(); //access the Google Maps API geocodin
               bounds.extend(place.geometry.location);
             }
           });
+        
+         marker.addListener('dragend', function() {
+  
+             marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function(){ marker.setAnimation(null); }, 2100); 
+         });  
         
         var latitudeValue = marker.getPosition().lat();
         var longitudeValue = marker.getPosition().lng();
