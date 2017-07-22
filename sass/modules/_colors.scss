@@ -1,8 +1,10 @@
-$primary-color:#FF9900;
-$secondary-color: #EFF9F9;
-
 $layout-colors: (
-    "header": $primary-color;
-    "body": $secondary-color;
-    "footer": $main-color; 
-)
+     header: #FF9900,
+     body: #EFF9F9,
+     footer: #FF9900, 
+);
+    
+$text-colors:(
+    header-primary: black,
+    header-secondary: white,
+);

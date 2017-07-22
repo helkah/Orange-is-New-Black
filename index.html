@@ -8,6 +8,8 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASBhfF254aUhQhTh3guanAppi26V4lNOo&libraries=places"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Oswald|Special+Elite" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quattrocento:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
         <script src="js/google-map-latlon-picker.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="js/my-gauge-chart.js"></script>
@@ -19,13 +21,13 @@
             <div class="container">
                     <button class="hamburger">&#9776;</button>    
                     <h1><span class=orange>ORANGE</span>
-                        <span class=smallLeters>IS THE NEW</span> BLACK</h1>
+                    IS THE NEW BLACK</h1>
                     <div class="movingTrump"></div>
                     <button class="cross">&#735;</button>
                     <nav class="dropDownMenu">
                         <ul>
-                            <li><a href="#uvWidget">UV INDEX SCALE</a></li>
-                            <li><a href="#protection">SUN PROTECTION RULES</a></li>
+                            <li><a href="#uvWidget">UV Index Scale</a></li>
+                            <li><a href="#protection">Sun Protection Rules</a></li>
                         </ul>
                     </nav>
             </div>    
@@ -58,8 +60,8 @@
                 </article>
                 <article class="uvProtection" id="protection">
                     <h2>Sun Protection Rules</h2>
-                    <h3 id="low">0 to 2: Low</h3>
-                    <div>
+                    <div class="low protectionRules">
+                        <h3>0 to 2: Low</h3>
                         <div>A UV Index reading of 0 to 2 means low danger from the sun's UV rays for the average person.</div>
                         <ul>
                             <li>Wear sunglasses on bright days.</li>
@@ -67,8 +69,8 @@
                             <li>vWatch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
                         </ul>
                     </div>
-                    <h3 id="moderate">3 to 5: Moderate</h3>
-                    <div>
+                    <div class="moderate protectionRules">
+                        <h3>3 to 5: Moderate</h3>
                         <div>A UV Index reading of 3 to 5 means moderate risk of harm from unprotected sun exposure</div>
                         <ul>
                             <li>Stay in shade near midday when the sun is strongest.</li>
@@ -76,9 +78,8 @@
                             <li>Generously apply broad spectrum SPF 30+ sunscreen every 2 hours, even on cloudy days, and after swimming or sweating. </li>
                         </ul>
                     </div>
-            
-                    <h3 id="high">6 to 7: High</h3>
-                    <div>
+                    <div class="high protectionRules">
+                        <h3>6 to 7: High</h3>
                         <div>A UV Index reading of 6 to 7 means high risk of harm from unprotected sun exposure. Protection against skin and eye damage is needed.</div>
                         <ul>
                             <li>Reduce time in the sun between 10 a.m. and 4 p.m.</li>
@@ -87,8 +88,8 @@
                             <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
                         </ul>
                     </div>
-                    <h3 id="veryHigh">8 to 10: Very High</h3>
-                    <div>
+                    <div class="veryHigh protectionRules">
+                        <h3>8 to 10: Very High</h3>
                         <div>A UV Index reading of 8 to 10 means very high risk of harm from unprotected sun exposure. Take extra precautions because unprotected skin and eyes will be damaged and can burn quickly.</div>
                         <ul>
                             <li>Minimize sun exposure between 10 a.m. and 4 p.m.</li>
@@ -97,8 +98,8 @@
                             <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure</li>
                         </ul>
                     </div>
-                    <h3 id="extreme">11+: Extreme</h3>
-                    <div>
+                    <div class="extreme protectionRules">
+                        <h3>11+: Extreme</h3>
                         <div>A UV Index reading of 11 or more means extreme risk of harm from unprotected sun exposure. Take all precautions because unprotected skin and eyes can burn in minutes.</div>
                         <ul>
                             <li>Try to avoid sun exposure between 10 a.m. and 4 p.m.</li>

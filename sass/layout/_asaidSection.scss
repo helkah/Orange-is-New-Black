@@ -1,15 +1,15 @@
 #uvWidget{
-    height: 50%;
-    width: 100%;
-    margin-top: 2rem;
+    margin: 2em 2em 0 2em ;
 }
 
 .uvProtection{
     font-size: 2.5vw;
-    font-family: 'Oswald', sans-serif;
-    height: 50%;
-    width: 100%;
+    margin: 0 2em;
     p{
         margin: 0 1em;
     }
+}
+
+.low, .moderate, .high, .veryHigh, .extreme{
+    display: none;
 }

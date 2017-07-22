@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-
-var uvIndex = 2;
+$(function(){
     
 var data = {
     labels: [
@@ -46,21 +44,47 @@ var data = {
         
     }
 
-var ctx = document.getElementById("myChart");
+var inView = false;
+var ctx = document.getElementById("myChart");    
 
-// And for a doughnut chart
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: data,
-    options: {
-    	rotation: 1 * Math.PI,
-        circumference: 1 * Math.PI,
-        legend:{
-            position:"bottom",
-        }
+var fired = 0; // animation fire only once
+    
+$(window).on('scroll',function() {
+    
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $("#myChart").offset().top;
+    var elemBottom = elemTop + $('#myChart').height();
+    
+    
+    if (fired == 0){
+        if ((elemTop <= docViewBottom) && (elemBottom >= docViewTop)){
+            
+            fired = 1;    
+
+            var myDoughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+    	           rotation: 1 * Math.PI,
+                   circumference: 1 * Math.PI,
+                   legend:{
+                     position:"top",
+                   }
         
+                }    
+            });
+        }
     }
 });
+
+    
+    
+    
+    
+    
+    
 
 });
 

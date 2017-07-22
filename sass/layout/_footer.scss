@@ -1,0 +1,22 @@
+footer{
+    background-color: map-get($layout-colors,footer);
+    height: 5vh;
+    span{
+        text-align: center;
+        padding: 0.5em 0;
+    }
+    a{
+        text-decoration: none;
+        color: map-get($text-colors,footer);
+    }
+        
+    a:visited{
+            color: black;
+    }
+    a:hover{
+            text-decoration: none;
+            color: black;
+        
+    }
+    
+}

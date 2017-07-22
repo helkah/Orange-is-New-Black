@@ -1,5 +1,5 @@
 header, header .container{
-    background-color: $orange;
+    background-color: map-get($layout-colors, header);
     height: 15vh;
     display: flex;
     flex-direction: row;
@@ -15,14 +15,12 @@ header, header .container{
 h1{
     margin: 0;
     height: 100%;
+    padding: 5vh 0;
+    width: 50%;
     text-align: center;
     font-family: 'Special Elite', cursive;
-    font-size: 2rem;
+    font-size: 6vw;
     .orange{
         color: white;
-        font-size: 4vw;
-    }
-    .smallLeters{
-        font-size: 2vw;
     }
 }

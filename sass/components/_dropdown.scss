@@ -2,8 +2,7 @@
         display: none;
         z-index:1000000;
         background-color: aliceblue;
-        font-weight:bold;
-        font-size:0.8em; 
+        font-size:0.8em;
         width:100%;
         position:absolute;
         top:15vh;
@@ -16,7 +15,8 @@
         li{ 
             display: block;
             color: #fef4e9;
-            font-family: 'Oswald', sans-serif;
+            font-family: Roboto, sans-serif;
+            text-shadow: 0 4px 4px rgba(0,0,0,.25);
 	        border: 0;
 	        background: #f78d1d;
 	        background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
@@ -33,7 +33,6 @@
             }
             a{
                 text-decoration: none;
-                letter-spacing: 0.1em;
                 &:hover{
                     text-decoration: none;
                 }

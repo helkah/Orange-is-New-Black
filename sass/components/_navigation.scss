@@ -2,11 +2,7 @@ button{
     &.hamburger{
         visibility: visible;
         background:none;
-        //position:absolute;
-        //top:0;
-        //left:0;
-        //line-height:45px;
-        //padding:5px 15px 0px 15px;
+        width: 25%;
         color:white;
         border:0;
         font-size:1.4em;
@@ -18,10 +14,7 @@ button{
     &.cross{
         visibility: hidden;
         background:none;
-        //position:absolute;
-        //top:0;
-        //left:0;
-        //padding:7px 15px 0px 15px;
+        width: 25%;
         color:white;
         border:0;
         font-size:3em;

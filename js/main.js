@@ -5,23 +5,42 @@ $(function(){
   var uvIndexElement = $("#uvIndex");
   var latitudeInput = $("#gllpLatitude");
   var longitudeInput = $("#gllpLongitude");
+  console.log(latitudeInput.text(),longitudeInput.text())    
     
   ////FUNCTIONS/////
-    
-    
-    
-    
-  function loadUvIndex() {
+  function loadLocationKey(){
       
-            var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
-            var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
-            var urlAdress = 'http://api.openweathermap.org/data/2.5/uvi?lat=';
-            var apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
+      var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
+      var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
+      var urlAdress = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search'
+      var apiKey = '?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&q=';
+      
+     // 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&q=51%2C17&language=pl&details=false&toplevel=true'
       
             $.ajax({
-            	   url: urlAdress + latitudeValue + "&lon=" + latitudeValue + apiKey
+            	   url: urlAdress + apiKey + latitudeValue + "%2C" + longitudeValue + "&language=pl&details=false&toplevel=true"
             }).done(function(response){
-                    showWhatDonaldSay(response.value);
+                    loadUvIndex(response.Key);
+                    console.log(response.Key);
+    	    }).fail(function(error) {
+            console.log(error);
+            })
+      
+  }    
+    
+    
+    
+  function loadUvIndex(locationKey) {
+      
+
+            var urlAdress = 'http://dataservice.accuweather.com/currentconditions/v1/';
+            var apiKey = '?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&';
+            //http://dataservice.accuweather.com/currentconditions/v1/2694848?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&language=pl&details=true
+      
+            $.ajax({
+            	   url: urlAdress + locationKey + apiKey + "language=pl&details=true" 
+            }).done(function(response){
+                    showWhatDonaldSay(response[0].UVIndex);
     	    }).fail(function(error) {
             console.log(error);
             })
@@ -33,10 +52,12 @@ $(function(){
         $("#uvIndex").text(uVIndexValue);
         
         var donaldImageElement = $('.donaldSign')
+        $(".protectionRules").css('display','none');
       
         if (uVIndexValue<=2){
             donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
             donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
+            $(".low").css('display','block');
                 
             };
         
@@ -45,6 +66,7 @@ $(function(){
             
              donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
              donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
+             $(".moderate").css('display','block');
     
             };
                 
@@ -53,6 +75,7 @@ $(function(){
              
             donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)');
                 donaldImageElement.find("p").text("Not even close! UV Index is " + uVIndexValue);
+                $(".high").css('display','block');
                 
             };
       
@@ -60,13 +83,14 @@ $(function(){
             
             donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
                 donaldImageElement.find("p").text("Hell yeah! UV Index is " + uVIndexValue);
-            
+                $(".veryHigh").css('display','block');
              };     
       
         if(uVIndexValue>10){
            
            donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
-            donaldImageElement.find("p").text("We`re goona die! UV Index is " + uVIndexValue)
+            donaldImageElement.find("p").text("We`re goona die! UV Index is " + uVIndexValue);
+            $(".extreme").css('display','block');
            
             };
                   
@@ -77,8 +101,10 @@ $(function(){
     
   $('#showTrump').on('click',function(){
       
+      loadLocationKey();
+    //loadUvIndex();
+    console.log(latitudeInput.text(),longitudeInput.text());
       
-    loadUvIndex();
       
      $('.flipper').toggleClass('hover');
                 console.log($('.flipper'))  
@@ -157,7 +183,7 @@ $('.cross').on('click', function(){
         }).animate({
         opacity: 1
         }, 300);
-    $('.dropDown').slideUp();
+    $('.dropDownMenu').slideUp();
 })
 
 /////////Event for dropdown Menu/////////////
