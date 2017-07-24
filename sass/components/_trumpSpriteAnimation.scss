@@ -2,17 +2,23 @@
     from {
         background-position-x: 0;
     }
-1   to {
+    to {
         background-position-x: -1536px;
     }
 }
 
 .movingTrump{
     display: none;
-    width: 256px;
-    height: 256px;
-    background-image: url(../images/trump_iddle.png);
-    background-position: 0 0;
-    animation: stand 0.8s steps(6) infinite;    
+    @include desktop{
+        display: block;
+         width: 256px;
+         height: 256px;
+         background-image: url(../images/trump_iddle.png);
+         background-position: 0 0;
+         animation: stand 0.8s steps(6) infinite;
+         transform: scale(0.6);
+         zoom:0.6;
+        
+    }
     
 }

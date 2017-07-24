@@ -18,11 +18,12 @@
     </head>
     <body>
         <header>
-            <div class="container">
-                    <button class="hamburger">&#9776;</button>    
+            <div class='stickyHeader'>
+                <div class="container">
+                    <button class="hamburger">&#9776;</button>
+                    <div class="movingTrump"></div>
                     <h1><span class=orange>ORANGE</span>
                     IS THE NEW BLACK</h1>
-                    <div class="movingTrump"></div>
                     <button class="cross">&#735;</button>
                     <nav class="dropDownMenu">
                         <ul>
@@ -30,33 +31,38 @@
                             <li><a href="#protection">Sun Protection Rules</a></li>
                         </ul>
                     </nav>
-            </div>    
+                </div>
+            </div>
         </header>
-        
-        <section class="main container flip-container">
-            <div class="flipper">
+        <div class="container">
+            <section class="main flip-container">
+            <div class="flipper container">
                 <article class="gllpLatlonPicker back">    
                     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                     <div id="gllpMap"></div>
                     <div id="gllpLatitude" hidden></div>
                     <div id="gllpLongitude" hidden></div>
                     <div id="uvIndex" hidden></div>
-                    <div class="orangeButtonWrap"><button class="orange" id="showTrump">Click Here</button></div>
+                    <div class="orangeButtonWrap"><button class="orange forSmartphone" id="showTrump">Click Here!</button></div>
                 </article>
                 <article class="donaldTrump front">
                     <div class="donaldSign">
                         <p>
-                            Hello World! Check out todays best places for sunbathing!<br> Pick the place on the Map.
+                            <span>Hello World! Check out todays best places for sunbathing!<br> Pick the place on the Map.<br></span>
+                            <button class="orange forTabletAndDesktop">Click Here!</button>
                         </p>
-                    </div>    
-                    <button id="showMap" class="orange">Show Map</button>
+                    </div>
+                    <div class=arrow></div>
+                    <button id="showMap" class="orange forSmartphone">Show Map</button>
                 </article>
             </div>    
         </section>
-        <section class="asaid container">
+            <section class="asaid container">
                 <article id="uvWidget">
                     <h2>UV Index Scale</h2>
-                    <canvas id="myChart"></canvas>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>    
                 </article>
                 <article class="uvProtection" id="protection">
                     <h2>Sun Protection Rules</h2>
@@ -108,8 +114,12 @@
                             <li>Watch out for bright surfaces, like sand, water and snow, which reflect UV and increase exposure.</li>
                         </ul>
                     </div>
+                    <div>
+                        <img src="images/donald_trump_PNG53.png" alt="Donald Trump Pointing on UV Protection Rules" class="donaldPointingImg">
+                    </div>    
                 </article>
-        </section>    
+        </section>
+        </div>    
         <footer>
             <div class="container">
                 <span>&#64;2017 <a href="#">Orange is a New Black</a></span>

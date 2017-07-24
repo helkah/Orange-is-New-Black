@@ -1,15 +1,29 @@
 #uvWidget{
     margin: 2em 2em 0 2em ;
+    height: 60%;
+}
+.chart-container {
+    @include tablet{
+        position: relative;
+        margin: auto;
+        height: 65vh;
+        width: 65vw;
+    }
 }
 
 .uvProtection{
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin: 0 2em;
+    height: 40%;
     p{
         margin: 0 1em;
     }
 }
 
-.low, .moderate, .high, .veryHigh, .extreme{
+.moderate, .high, .veryHigh, .extreme{
     display: none;
+}
+.donaldPointingImg{
+    width: 100%;
+    height: 100%;
 }

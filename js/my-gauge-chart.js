@@ -27,11 +27,11 @@ var data = {
                 "white",
             ],
             borderWidth: [
-                "8",
-                "8",
-                "8",
-                "8",
-                "8",
+                "4",
+                "4",
+                "4",
+                "4",
+                "4",
             ],
             hoverBackgroundColor: [
                 "#98FB98",

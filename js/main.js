@@ -55,44 +55,57 @@ $(function(){
         $(".protectionRules").css('display','none');
       
         if (uVIndexValue<=2){
-            donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
-            donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
-            $(".low").css('display','block');
-                
-            };
+            donaldImageElement.animate({'opacity': 0}, 1000, function () {
+                donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
+                donaldImageElement.find("span").text("This place sucks! UV Index is " + uVIndexValue );
+                $(".low").css('display','block');
+                donaldImageElement.find("button").text("Try again!");
+            }).animate({'opacity': 1}, 1000);        
+        };
         
       
         if (uVIndexValue>2 && uVIndexValue<=5){
             
-             donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
-             donaldImageElement.find("p").text("This place sucks! UV Index is " + uVIndexValue );
-             $(".moderate").css('display','block');
+            donaldImageElement.animate({'opacity': 0}, 1000, function () {
+                donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
+                donaldImageElement.find("span").text("This place sucks! UV Index is " + uVIndexValue );
+                $(".moderate").css('display','block');
+                donaldImageElement.find("button").text("Try again!");
+            }).animate({'opacity': 1}, 1000);     
     
-            };
+        };
                 
       
         if (uVIndexValue>5 && uVIndexValue<=7){
              
-            donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)');
-                donaldImageElement.find("p").text("Not even close! UV Index is " + uVIndexValue);
+            donaldImageElement.animate({'opacity': 0}, 1200, function () {
+                donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)');
+                donaldImageElement.find("span").text("Not even close! UV Index is " + uVIndexValue);
                 $(".high").css('display','block');
+                donaldImageElement.find("button").text("Try again!");
+            }).animate({'opacity': 1}, 1200);     
                 
-            };
+        };
       
         if (uVIndexValue>7 && uVIndexValue<=10){
             
-            donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
-                donaldImageElement.find("p").text("Hell yeah! UV Index is " + uVIndexValue);
+            donaldImageElement.animate({'opacity': 0}, 1000, function () {
+                donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
+                donaldImageElement.find("span").text("Hell yeah! UV Index is " + uVIndexValue);
                 $(".veryHigh").css('display','block');
-             };     
+                donaldImageElement.find("button").text("Try again!");
+            }).animate({'opacity': 1}, 1000);     
+        };     
       
         if(uVIndexValue>10){
            
-           donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
-            donaldImageElement.find("p").text("We`re goona die! UV Index is " + uVIndexValue);
-            $(".extreme").css('display','block');
+            donaldImageElement.animate({'opacity': 0}, 1000, function () {
+                donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
+                donaldImageElement.find("span").text("We`re goona die! UV Index is " + uVIndexValue);
+                $(".extreme").css('display','block');
+            }).animate({'opacity': 1}, 1000);     
            
-            };
+        };
                   
     };
         
@@ -101,17 +114,18 @@ $(function(){
     
   $('#showTrump').on('click',function(){
       
-      loadLocationKey();
-    //loadUvIndex();
-    console.log(latitudeInput.text(),longitudeInput.text());
-      
-      
-     $('.flipper').toggleClass('hover');
-                console.log($('.flipper'))  
-        
-        
-      
+     loadLocationKey();  
+     $('.flipper').toggleClass('rotation');
+                    
   });
+    
+  $('#showMap').on('click',function(){
+                 $('.flipper').toggleClass('rotation');
+                console.log($('.flipper'))
+                 });
+  $(".forTabletAndDesktop").on('click',function(){
+      loadLocationKey();
+  })
     
      
 var lastScrollTopValue = 0;
@@ -137,18 +151,15 @@ $(window).on('scroll',function(event){
     ////////////STICKY MENU/////////////////
     var stickyNavTop = $('header').offset().top;
     if (currentScrollTopValue  > stickyNavTop) { 
-        $('header > .container').addClass('sticky');
+        $('header > div').addClass('sticky');
     } else {
-        $('header > .container').removeClass('sticky'); 
+        $('header > div').removeClass('sticky'); 
     }
    
     
   });
     
-    $('#showMap').on('click',function(){
-                 $('.flipper').toggleClass('hover');
-                console.log($('.flipper'))
-                 });    
+      
 
 
 

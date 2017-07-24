@@ -2,6 +2,12 @@
     padding: 0px;
     height: 100%;
     width: 100%;
+    @include tablet{
+        width: 50%;
+    }
+    @include desktop{
+        width: 50%;
+    }
 }
 
 

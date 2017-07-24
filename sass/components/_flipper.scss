@@ -1,11 +1,17 @@
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
-    height: 81vh;
+    height: 80vh;
+    @include tablet{
+        height: 85vh;
+    }
+    @include desktop{
+        height: 85vh;
+    }
     
 }
 	/* flip the pane*/
-.hover {
+.rotation {
 		transform: rotateY(180deg);
 	}
 
@@ -17,9 +23,13 @@
 .flipper {
     width: 100%;
     height: 100%;
-	transition: 0.6s;
+	transition-delay: 0.4s;
+    transition-duration: 1.4s;
 	transform-style: preserve-3d;
 	position: relative;
+    @include desktop{
+        position: static;
+    }
 }
 
 /* hide back of pane during swap */
@@ -29,6 +39,14 @@
     position: absolute;
 	top: 0;
 	left: 0;
+    @include tablet{
+        position: static;
+        width: 50%;
+    }
+    @include desktop{
+        position: static;
+        width: 50%;
+    }
 }
 
 /* front pane, placed above back */
@@ -42,4 +60,10 @@
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+    @include tablet{
+        transform: none;
+    }
+    @include desktop{
+        transform: none;
+    }
 }

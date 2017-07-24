@@ -1,9 +1,10 @@
 footer{
     background-color: map-get($layout-colors,footer);
-    height: 5vh;
+    height: 6vh;
     span{
+        font-size: 2vw;
         text-align: center;
-        padding: 0.5em 0;
+        padding: 1.2vh 0;
     }
     a{
         text-decoration: none;

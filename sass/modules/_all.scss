@@ -1,4 +1,16 @@
-$smartphone: "(max-width: 767px)";
-$tablet: "(min-width:768px) and (max-width:1023px)";
-$desktop: "(min-width:1024px)";
+$small-screen: 767px;
+$medium-screen: 1023px;
+$large-screen: 1024px;
+
+@mixin tablet{
+    @media (min-width:#{$small-screen}) and (max-width:#{$medium-screen}){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width:#{$large-screen}){
+        @content;
+    }
+}
 

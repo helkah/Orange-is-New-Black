@@ -1,10 +1,20 @@
-header, header .container{
-    background-color: map-get($layout-colors, header);
+header{
+    background-color: #ffb74c;
     height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
+}
+
+header .container{
+    @extend header;
+    background-color: map-get($layout-colors, header);
+
+}
+.stickyHeader{
+    width: 100%;
+    background-color: #ffb74c;
 }
 
 .sticky{
@@ -23,4 +33,12 @@ h1{
     .orange{
         color: white;
     }
+    @include tablet{
+        font-size: 5vw;
+    }
+    @include desktop{
+        font-size: 3rem;;
+    }
 }
+
+
