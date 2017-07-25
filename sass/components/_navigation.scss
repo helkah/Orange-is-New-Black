@@ -10,6 +10,10 @@ button{
         cursor:pointer;
         outline:none;
         z-index:10000000000000;
+        @include desktop{
+            display: none;
+        }
+            
     }
     &.cross{
         visibility: hidden;
@@ -23,8 +27,16 @@ button{
         cursor:pointer;
         outline:none;
         z-index:10000000000000;
+        @include desktop{
+            display: none;
+        }
     }
 }
 
 
+.desktopMenu{
+    @include desktop{
+        display: block;
+    }
+}
 

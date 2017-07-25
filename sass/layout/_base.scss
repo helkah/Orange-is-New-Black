@@ -20,7 +20,12 @@ h2,h3,footer{
 }
 
 h2{
-  font-size: 3.5vw;  
+    font-size: 3.5vw;
+    @include desktop{
+        font-size: 2vw;
+    }
+  
+    
 }
 
 .container{
@@ -31,10 +36,16 @@ h2{
     margin: auto;
     @include desktop{
         flex-direction: row;
+        flex-wrap: wrap;
     }
-}
+
     @include tablet{
         flex-direction: row;
+        flex-wrap: wrap;
         
     }
+}
+
+ul{
+    padding: 0;
 }

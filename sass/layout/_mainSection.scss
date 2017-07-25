@@ -2,6 +2,9 @@ article.front{
     @include tablet{
         background-color: #7DCDCD; 
     }
+    @include desktop{
+        background-color: #7DCDCD;
+    }
 }
 
 .donaldSign{
@@ -11,28 +14,43 @@ article.front{
     transition: background-image 1s ease-in-out;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 3vw;
+    font-size: 3vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    
+    
+    
     @include tablet{
-        font-size: 2vw;
+        font-size: 1.8vmin;
         background-color:#7DCDCD;
         height: 80%;
     }
     @include desktop{
-        font-size: 2vw;
+        font-size: 2vmin;
         background-color: #7DCDCD;
         height: 100%;
-        width: 512px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
     }
-    p{
-        padding: 64% 0;
-        margin: 0;
+    p{  
+        align-self: center;
+        padding-top: 33vmin;
         @include tablet{
-            padding: 55% 10%;
+            padding-top: 19vmin;
         }
         @include desktop{
-            padding: 55% 10%;
+            padding-top: 28vmin;
+            }    
+         
         }
     }   
-}
+
+

@@ -7,14 +7,25 @@
         position:absolute;
         top:15vh;
         text-align:center;
+        @include desktop{
+            display: flex;
+            background-color: transparent;
+            width: auto;
+            position: static;
+            flex-direction: row;
+            
+        }
         ul{
             list-style-type: none;
             margin: 0;
             padding: 0;
+            @include desktop{
+                align-self: center;
+                margin-right: 3vw;
+            }
         }
         li{ 
             display: block;
-            color: #fef4e9;
             font-family: Roboto, sans-serif;
             text-shadow: 0 4px 4px rgba(0,0,0,.25);
 	        border: 0;
@@ -24,21 +35,36 @@
 	        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
             padding: .7em;
             margin-top: 0.1em;
+            @include desktop{
+                display: inline-block;
+                text-shadow: none;
+                background:none;
+                color: #FF9900;
+                font-family: 'Oswald', sans-serif;
+                font-size: 1rem;
+
+
+            }
             &:hover{
                     cursor: pointer;
                     background: #f47c20;
                     background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
 	                background: -moz-linear-gradient(top,  #f88e11,  #f06015);
 	                filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+                    @include desktop{
+                        background: none;
+                        transform: scale(1.1);
+                }
             }
             a{
                 text-decoration: none;
-                &:hover{
-                    text-decoration: none;
-                }
-                &:visited{
-                    color: #fef4e9; 
-                }
+            }
+            a:hover{
+                text-decoration: none;
+                
+            }
+            a:visited{
+                    color: #FF9900; 
             }
             
         }

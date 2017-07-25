@@ -58,7 +58,7 @@ $(function(){
             donaldImageElement.animate({'opacity': 0}, 1000, function () {
                 donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
                 donaldImageElement.find("span").text("This place sucks! UV Index is " + uVIndexValue );
-                $(".low").css('display','block');
+                $(".low").slideDown();
                 donaldImageElement.find("button").text("Try again!");
             }).animate({'opacity': 1}, 1000);        
         };
@@ -69,7 +69,7 @@ $(function(){
             donaldImageElement.animate({'opacity': 0}, 1000, function () {
                 donaldImageElement.css('background-image','url(../images/TrumpSign_mad.png)');
                 donaldImageElement.find("span").text("This place sucks! UV Index is " + uVIndexValue );
-                $(".moderate").css('display','block');
+                $(".moderate").slideDown();
                 donaldImageElement.find("button").text("Try again!");
             }).animate({'opacity': 1}, 1000);     
     
@@ -81,7 +81,7 @@ $(function(){
             donaldImageElement.animate({'opacity': 0}, 1200, function () {
                 donaldImageElement.css('background-image','url(../images/TrumpSign_sad.png)');
                 donaldImageElement.find("span").text("Not even close! UV Index is " + uVIndexValue);
-                $(".high").css('display','block');
+                $(".high").slideDown();
                 donaldImageElement.find("button").text("Try again!");
             }).animate({'opacity': 1}, 1200);     
                 
@@ -92,7 +92,7 @@ $(function(){
             donaldImageElement.animate({'opacity': 0}, 1000, function () {
                 donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
                 donaldImageElement.find("span").text("Hell yeah! UV Index is " + uVIndexValue);
-                $(".veryHigh").css('display','block');
+                $(".veryHigh").slideDown();
                 donaldImageElement.find("button").text("Try again!");
             }).animate({'opacity': 1}, 1000);     
         };     
@@ -102,7 +102,7 @@ $(function(){
             donaldImageElement.animate({'opacity': 0}, 1000, function () {
                 donaldImageElement.css('background-image','url(../images/TrumpSign_laughing.png)');
                 donaldImageElement.find("span").text("We`re goona die! UV Index is " + uVIndexValue);
-                $(".extreme").css('display','block');
+                $(".extreme").slideDown();
             }).animate({'opacity': 1}, 1000);     
            
         };
@@ -212,7 +212,25 @@ $('li').on('click', function(){
 
 
 
+//////////////////
 
+/*var desktop = window.matchMedia("(min-width:1024px)");
+    if(desktop.matches){
+        var nav = document.querySelector('nav');
+        nav.classList.remove("dropDownMenu");
+    }else{
+        nav.classList.add("dropDownMenu");
+    }    
+    
+desktop.addListener(function(desktop){
+    if(desktop.matches){
+        var nav = document.querySelector('nav');
+        nav.classList.remove("dropDownMenu");
+    }else{
+        nav.classList.add("dropDownMenu");
+    }
+    });*/
+    
 
 
 
