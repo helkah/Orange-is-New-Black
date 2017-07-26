@@ -7,14 +7,20 @@ function init() {
     
   // Basic options for a simple Google Map
   // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions    
-  var latLng = new google.maps.LatLng(-34.397, 150.644);// The latitude and longitude to center the map (required)
+  var latLng = new google.maps.LatLng(40.700, -73.816);// The latitude and longitude to center the map (required)
     
   var mapOptions = {
-    zoom: 8, // How zoomed in you want the map to start at (required)
+    zoom: 7, // How zoomed in you want the map to start at (required)
     center: latLng,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    scrollwheel: false,  
-    // How to style the map. 
+    scrollwheel: false, 
+    mapTypeControl: false,
+    streetViewControl: false,
+    zoomControl: true,  
+    zoomControlOptions: {
+        position:google.maps.ControlPosition.LEFT_CENTER,
+    },  
+    // How to style the map: 
     // This is where I paste style found on Snazzy Maps  
     styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"color":"#f6b221"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"color":"#f6b221"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
           
