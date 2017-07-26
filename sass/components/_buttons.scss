@@ -52,7 +52,7 @@ button {
     }
 }
 
-.forSmartphone{
+.forSmartphoneBtn{
     @include tablet{
             display: none;
       }
@@ -61,7 +61,7 @@ button {
     }
     
 }
-.forTabletAndDesktop{
+.forTabletAndDesktopBtn{
     display: none;
     margin-top: 2em;
     width: 50%;
