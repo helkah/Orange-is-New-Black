@@ -115,8 +115,10 @@ $(function(){
         
     
    function spriteAnimation(currentScrollTopValue){
+        
+       console.log(currentScrollTopValue, $(window).height(), $(document).height())
          
-        if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration
+        if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration    
         
             if(currentScrollTopValue + $(window).height() == $(document).height()){
                 $('.movingTrump').css('background-image','url(../images/trump_iddle.png)').css('background-position-y','0')

@@ -5,7 +5,11 @@
     @include desktop{
         flex-grow: 1;
         margin-top: 8rem;
+        h2{
+            display: none;
+        }
     }
+    
 }
 .chart-container {
     @include tablet{
@@ -41,14 +45,8 @@
     display: none;
 }
 
-
-.donaldPointingImg{
-    width: 79%;
-    height: 79%;
-}
-
-asaid{
-    include desktop{
+asaid.container{
+    @include desktop{
         height: 80vh;
         flex-direction: column-reverse;
         margin: 0 15vw;
@@ -59,4 +57,11 @@ asaid{
 
 li{
     margin-bottom: 0.5em;
+}
+
+@include desktop{
+    img{
+        max-width: 100%;
+        height: auto;
+    }
 }

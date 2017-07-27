@@ -16,5 +16,8 @@
     "gulp-sourcemaps": "^2.6.0",
     "jshint": "^2.9.4",
     "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^4.0.0"
   }
 }

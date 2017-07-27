@@ -132,16 +132,7 @@ var geocoder = new google.maps.Geocoder(); //access the Google Maps API geocodin
         longitudeElement.innerText = longitudeValue;
         
         map.fitBounds(bounds);
-        });
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        });  
 };
 
 

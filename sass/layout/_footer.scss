@@ -5,8 +5,13 @@ footer{
         font-size: 2vmin;
         text-align: center;
         padding: 1.2vh 0;
+        &.fa{
+            color: white;
+        }
     }
     a{
+        align-self:center;
+        margin-left: 1%;
         text-decoration: none;
         color: map-get($text-colors,footer);
     }
@@ -16,8 +21,8 @@ footer{
     }
     a:hover{
             text-decoration: none;
-            color: black;
-        
+            color: black;        
     }
     
 }
+

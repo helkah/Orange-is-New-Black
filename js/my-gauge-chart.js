@@ -10,8 +10,7 @@ var data = {
     ],
     datasets: [
         {   
-            
-            data: [2, 5, 7, 8,13],
+            data: [2,5,7,10,11],
             backgroundColor: [
                 "#EEEEEE",
                 "#DCDCDC",
@@ -71,9 +70,22 @@ $(window).on('scroll',function() {
                    circumference: 1 * Math.PI,
                    legend:{
                      position:"top",
-                   }
+                     labels:{
+                         fontSize: 16,
+                         fontFamily: "'Roboto', sans-serif",
+                         fontColor: 'orange',
+                     },   
+                   },
+                   title: {
+                        display: true,
+                        text: 'UV INDEX SCALE',
+                        position:"bottom",
+                        fontSize: 18,
+                        fontFamily: "'Roboto', sans-serif",
+                        fontColor: 'black',
         
-                }    
+                    },
+                }
             });
         }
     }
