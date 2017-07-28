@@ -120,7 +120,7 @@ $(function(){
          
         if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration    
         
-            if(currentScrollTopValue + $(window).height() == $(document).height()){
+            if(currentScrollTopValue + $(window).height() >= $(document).height()){
                 $('.movingTrump').css('background-image','url(../images/trump_iddle.png)').css('background-position-y','0')
             }else{
                 $('.movingTrump').css('background-image','url(../images/trump_run.png)').css('background-position-y','0')
@@ -149,33 +149,33 @@ $(function(){
         }
     };
     
-    function hideHamburgerMenu(){
-        $(this).animate({opacity:0},300, function(){
-            $(this).css('visibility','hidden');
+    function hideHamburgerMenu($element){
+        $element.animate({opacity:0},300, function(){
+            $element.css('visibility','hidden');
         });
     }
     
-    function showDropDownMenuShowCross(){
-        $(this).next().next().next().css({ opacity: 0, visibility: "visible"}).animate({opacity: 1}, 300);
+    function showDropDownMenuShowCross($element){
+        $element.next().next().next().css({ opacity: 0, visibility: "visible"}).animate({opacity: 1}, 300);
         $('.dropDownMenu').slideDown();
     }
     
-    function hideCross(){
-        $(this).animate({opacity:0},300, function(){
-            $(this).css('visibility','hidden');
+    function hideCross($element){
+        $element.animate({opacity:0},300, function(){
+            $element.css('visibility','hidden');
         });
     }
     
-    function hideDropDownMenuShowHamburgerMenu(){
+    function hideDropDownMenuShowHamburgerMenu($element){
     
-        $(this).prev().prev().prev().css({opacity: 0, visibility: "visible"
+        $element.prev().prev().prev().css({opacity: 0, visibility: "visible"
             }).animate({opacity: 1}, 300);
         $('.dropDownMenu').slideUp();
     }
     
-    function scrollToTargetSection(){  
+    function scrollToTargetSection($element){  
         
-        var scrollPlaceid = $(this).children().attr('href');
+        var scrollPlaceid = $element.children().attr('href');
         var menuHeight = $('.dropDownMenu').height();
         var headerHeight = $('header').height();
 
@@ -225,20 +225,21 @@ $(function(){
 //Hamburger menu and cross events
 
     $('.hamburger').on('click', function(){   
-        hideHamburgerMenu();
-        showDropDownMenuShowCross();
+        hideHamburgerMenu($(this));
+        showDropDownMenuShowCross($(this));
     });
 
 
     $('.cross').on('click', function(){
-        hideCross();
-        hideDropDownMenuShowHamburgerMenu();
+        hideCross($(this));
+        hideDropDownMenuShowHamburgerMenu($(this));
     });
 
 //Event for dropdown Menu elements
 
-    $('li').on('click', function(){
-        scrollToTargetSection();
+    $('li').on('click', function(e){
+        e.preventDefault();
+        scrollToTargetSection($(this));
     
     });
 
@@ -246,33 +247,5 @@ $(function(){
 
 //////////////////
 
-/*var desktop = window.matchMedia("(min-width:1024px)");
-    if(desktop.matches){
-        var nav = document.querySelector('nav');
-        nav.classList.remove("dropDownMenu");
-    }else{
-        nav.classList.add("dropDownMenu");
-    }    
     
-desktop.addListener(function(desktop){
-    if(desktop.matches){
-        var nav = document.querySelector('nav');
-        nav.classList.remove("dropDownMenu");
-    }else{
-        nav.classList.add("dropDownMenu");
-    }
-    });*/
-    
-
-
-
-
-
-
-
-
-
-
-
-
 });

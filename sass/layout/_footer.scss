@@ -1,6 +1,9 @@
 footer{
     background-color: map-get($layout-colors,footer);
     height: 6vh;
+    .container{
+        flex-direction: row;
+    }
     span{
         font-size: 2vmin;
         text-align: center;

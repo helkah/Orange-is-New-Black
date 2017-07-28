@@ -21,7 +21,7 @@
     @include desktop{
         position: relative;
         margin: auto;
-        height: 25vh;
+        height: 40%;
         width: 25vw;
     }
 }
@@ -31,7 +31,6 @@
     margin: 0 2em;
     height: 40%;
     @include desktop{
-        height: 80vh;
         flex-grow: 1;
         font-size: 2vmin;
         margin-top: 0;
@@ -47,7 +46,6 @@
 
 asaid.container{
     @include desktop{
-        height: 80vh;
         flex-direction: column-reverse;
         margin: 0 15vw;
         flex-direction: row-reverse;
@@ -59,9 +57,8 @@ li{
     margin-bottom: 0.5em;
 }
 
-@include desktop{
-    img{
-        max-width: 100%;
-        height: auto;
-    }
+
+img{
+    max-width: 100%;
+    height: auto;
 }

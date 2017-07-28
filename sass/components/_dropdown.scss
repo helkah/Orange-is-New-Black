@@ -7,6 +7,7 @@
         position:absolute;
         top:15vh;
         text-align:center;
+        background-color: #7DCDCD;
         @include desktop{
             display: flex;
             background-color: transparent;
@@ -27,6 +28,7 @@
         li{ 
             display: block;
             font-family: Roboto, sans-serif;
+            font-size: 1rem;
             text-shadow: 0 4px 4px rgba(0,0,0,.25);
 	        border: 0;
 	        background: #f78d1d;
@@ -34,7 +36,8 @@
 	        background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
 	        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
             padding: .7em;
-            margin-top: 0.1em;
+            margin-top: 0.09em;
+            margin-bottom: 0;
             @include desktop{
                 display: inline-block;
                 text-shadow: none;
@@ -43,6 +46,9 @@
                 font-family: 'Oswald', sans-serif;
                 font-size: 1rem;
                 letter-spacing: 0.1rem;
+                &:nth-child(2){
+                    display: none;
+                }
 
 
             }
@@ -59,13 +65,21 @@
             }
             a{
                 text-decoration: none;
+                color: white;
+                @include desktop{
+                    color: #FF9900;
+                }
+                
             }
             a:hover{
                 text-decoration: none;
                 
             }
             a:visited{
-                    color: #FF9900; 
+                    color: white;
+                    @include desktop{
+                        color: #FF9900;
+                }
             }
             
         }
