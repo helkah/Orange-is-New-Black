@@ -19,34 +19,40 @@ button {
     }
 
     &.orange{
-	    color: #fef4e9;
+	    color: $bridesmaid;
 	    border: 0;
-	    background: #f78d1d;
-	    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FF6600), color-stop(1, #FF9900));
-        background: -webkit-linear-gradient(bottom, #FF6600 0%, #FF9900 47%);
-        background: -moz-linear-gradient(bottom, #FF6600 0%, #FF9900 47%);
-        background: -o-linear-gradient(bottom, #FF6600 0%, #FF9900 47%);
-        background: -ms-linear-gradient(bottom, #FF6600 0%, #FF9900 47%);
-        background: linear-gradient(to top, #FF6600 0%, #FF9900 47%);
-        
-    }
+	    background: $orange-peel;
+	    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, $blaze-orange), color-stop(1, $orange-peel));
+        background: -webkit-linear-gradient(bottom, $blaze-orange 0%, $orange-peel 47%);
+        background: -moz-linear-gradient(bottom, $blaze-orange 0%, $orange-peel 47%);
+        background: -o-linear-gradient(bottom, $blaze-orange 0%, $orange-peel 47%);
+        background: -ms-linear-gradient(bottom, $blaze-orange 0%, $orange-peel 47%);
+        background: linear-gradient(to top, $blaze-orange 0%, $orange-peel 47%);
+        }
     
     &.orange:hover {
-	   background: #f47c20;
-	   background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
-	   background: -moz-linear-gradient(top,  #f88e11,  #f06015);
-	   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
-    }
+        color: $bridesmaid;
+	    border: 0;
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $blaze-orange), color-stop(0.47, $orange-peel));
+        background: -webkit-linear-gradient(top,$blaze-orange 0%, $orange-peel 47%);
+        background: -moz-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: -o-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: -ms-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: linear-gradient(to bottom, $blaze-orange 0%, $orange-peel 47%);
+        }
     
     &.orange:active {
-	   color: #fcd3a5;
-	   background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
-	   background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
-	   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
-    }
+	    color: $corvette;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $blaze-orange), color-stop(0.47, $orange-peel));
+        background: -webkit-linear-gradient(top,$blaze-orange 0%, $orange-peel 47%);
+        background: -moz-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: -o-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: -ms-linear-gradient(top, $blaze-orange 0%, $orange-peel 47%);
+        background: linear-gradient(to bottom, $blaze-orange 0%, $orange-peel 47%);
+        }
     
     &.orangeButtonWrap{
-        background-color:#7dcdcd;
+        background-color:$monte-carlo;
         width: 100%;
 
     }

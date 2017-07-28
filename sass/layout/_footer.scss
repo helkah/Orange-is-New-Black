@@ -1,13 +1,23 @@
 footer{
-    background-color: map-get($layout-colors,footer);
+    background-color: $orange-peel;
     height: 6vh;
+    margin-bottom: 0;
     .container{
+        background-color: $orange-peel;
+        height: 100%;
         flex-direction: row;
     }
     span{
-        font-size: 2vmin;
+        font-size: 3vmin;
         text-align: center;
         padding: 1.2vh 0;
+        @include tablet{
+            font-size: 2vmin;
+        }
+        @include desktop{
+            font-size: 2vmin;
+        }
+        
         &.fa{
             color: white;
         }
@@ -16,7 +26,7 @@ footer{
         align-self:center;
         margin-left: 1%;
         text-decoration: none;
-        color: map-get($text-colors,footer);
+        color: $baltic-see;
     }
         
     a:visited{

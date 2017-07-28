@@ -82,7 +82,7 @@ $(window).on('scroll',function() {
                         position:"bottom",
                         fontSize: 18,
                         fontFamily: "'Roboto', sans-serif",
-                        fontColor: 'black',
+                        fontColor: '#2A2630',
         
                     },
                 }

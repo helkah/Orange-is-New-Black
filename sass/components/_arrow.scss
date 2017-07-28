@@ -4,7 +4,7 @@
     height: 0;
     border-style: solid;
     border-width: 3rem 3rem 0 3rem;
-    border-color: #70b8b8 transparent transparent transparent;
+    border-color: darken($monte-carlo, 13%) transparent transparent transparent;
     margin: auto;
     @include tablet{
         display: block;

@@ -27,12 +27,12 @@ article.front{
     
     @include tablet{
         font-size: 1.8vmin;
-        background-color:#7DCDCD;
+        background-color:$monte-carlo;
         height: 80%;
     }
     @include desktop{
         font-size: 2vmin;
-        background-color: #7DCDCD;
+        background-color: $monte-carlo;
         height: 100%;
         width: 100%;
         display: flex;

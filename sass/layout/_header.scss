@@ -9,12 +9,10 @@ header{
 
 header .container{
     @extend header;
-    background-color: map-get($layout-colors, header);
+    background-color: $orange-peel;
     @include desktop{
-        background-color: white;
-       
+        background-color: $white;  
     }
-
 }
 
 
@@ -29,7 +27,7 @@ h1{
     .orange{
         color: white;
         @include desktop{
-            color: #FF9900;
+            color: $orange-peel;
         }
     }
     @include tablet{

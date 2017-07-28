@@ -30,11 +30,9 @@
             font-family: Roboto, sans-serif;
             font-size: 1rem;
             text-shadow: 0 4px 4px rgba(0,0,0,.25);
+	        color: $bridesmaid;
 	        border: 0;
-	        background: #f78d1d;
-	        background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
-	        background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
-	        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+	        background: $orange-peel;
             padding: .7em;
             margin-top: 0.09em;
             margin-bottom: 0;
@@ -42,7 +40,7 @@
                 display: inline-block;
                 text-shadow: none;
                 background:none;
-                color: #FF9900;
+                color: $orange-peel;
                 font-family: 'Oswald', sans-serif;
                 font-size: 1rem;
                 letter-spacing: 0.1rem;
@@ -54,10 +52,7 @@
             }
             &:hover{
                     cursor: pointer;
-                    background: #f47c20;
-                    background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
-	                background: -moz-linear-gradient(top,  #f88e11,  #f06015);
-	                filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+                    background: darken($orange-peel,2%);
                     @include desktop{
                         background: none;
                         transform: scale(1.1);
@@ -67,7 +62,7 @@
                 text-decoration: none;
                 color: white;
                 @include desktop{
-                    color: #FF9900;
+                    color: $orange-peel;
                 }
                 
             }
@@ -78,7 +73,7 @@
             a:visited{
                     color: white;
                     @include desktop{
-                        color: #FF9900;
+                        color: $orange-peel;
                 }
             }
             
