@@ -31,12 +31,14 @@ function init() {
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
   
-  
+    
+    
     // Add draggable marker   
     var marker = new google.maps.Marker({
         position: latLng, //identifying the initial location of the marker(required)
         title: 'Sunbathing Place',
         map: map,//specifies the Map on which to place the marker
+        icon: '/images/marker.png',
         draggable: true 
     });
     
