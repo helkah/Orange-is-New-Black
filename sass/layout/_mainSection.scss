@@ -45,9 +45,11 @@ article.front{
         padding-top: 33vmin;
         @include tablet{
             padding-top: 19vmin;
+            width: 70%;
         }
         @include desktop{
             padding-top: 28vmin;
+            width: 50%;
             }    
          
         }

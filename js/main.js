@@ -1,6 +1,6 @@
 $(function(){
   
-  //1//////////VARIABLES/////////////////
+  ////////////VARIABLES/////////////////
     
   var uvIndexElement = $("#uvIndex");
   var latitudeInput = $("#gllpLatitude");
@@ -8,21 +8,22 @@ $(function(){
   var clickHereBtnForMobile =  $('#showTrumpBtn');
   var showMapBtnForMobile =  $('#showMapBtn'); 
   var btnForTabletAndDesktop = $(".forTabletAndDesktopBtn");
-  var lastScrollTopValue = 0;    
+  var lastScrollTopValue = 0;
+     
     
-  //2//////////FUNCTIONS/////////////////
+  ////////////FUNCTIONS/////////////////
   function loadLocationKey(){
       
       var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
       var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
-      var urlAdress = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search'
-      var apiKey = '?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&q=';
+      var urlAdress = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey='
+      var apiKey = config.MY_KEY_ACCUWEATHER;
       
       
             $.ajax({
-            	   url: urlAdress + apiKey + latitudeValue + "%2C" + longitudeValue + "&language=pl&details=false&toplevel=true"
+            	   url: urlAdress + apiKey + "&q=" + latitudeValue + "%2C" + longitudeValue + "&language=pl&details=false&toplevel=true"
             }).done(function(response){
-                    loadUvIndex(response.Key);
+                    loadUvIndexFromAccuweather(response.Key);
                     console.log(response.Key);
     	    }).fail(function(error) {
             console.log(error);
@@ -30,19 +31,39 @@ $(function(){
       
   };    
     
-  function loadUvIndex(locationKey) {
+  function loadUvIndexFromAccuweather(locationKey) {
       
         var urlAdress = 'http://dataservice.accuweather.com/currentconditions/v1/';
-        var apiKey = '?apikey=kiK5mAnIBjvK9fWrJSTDASICEao6KrLT&';
+        var apiKey = config.MY_KEY_ACCUWEATHER;
       
         $.ajax({
-            url: urlAdress + locationKey + apiKey + "language=pl&details=true" 
+            url: urlAdress + locationKey + "?apikey=" + apiKey + "&language=pl&details=true" 
         }).done(function(response){
                 showWhatDonaldSay(response[0].UVIndex);
         }).fail(function(error) {
         console.log(error);
         });
   };
+    
+  
+    
+function loadUvIndexFromOpenweather() {
+        
+             var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
+             var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
+             var apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
+ 
+             var urlAdress = 'http://api.openweathermap.org/data/2.5/uvi?lat=';
+             var apiKey = config.MY_KEY_OPENWEATHERMAP;
+        
+              $.ajax({
+             	   url: urlAdress + latitudeValue + "&lon=" + longitudeValue + "&appid=" + apiKey 
+              }).done(function(response){
+                     showWhatDonaldSay(response.value);
+      	    }).fail(function(error) {
+              console.log(error);
+              })
+};
     
   function showWhatDonaldSay(givenUvIndex){
         
@@ -197,7 +218,8 @@ $(function(){
     
   clickHereBtnForMobile.on('click',function(){
 
-        loadLocationKey();  
+        //loadLocationKey(); 
+        loadUvIndexFromOpenweather();
         $('.flipper').toggleClass('rotation');                    
   });
     
@@ -208,8 +230,9 @@ $(function(){
     
     
   btnForTabletAndDesktop.on('click',function(){
-         
-      loadLocationKey();
+       
+      loadUvIndexFromOpenweather();
+      //loadLocationKey();
   });
     
 //Scroll bar event   
