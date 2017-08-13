@@ -142,9 +142,9 @@ function loadUvIndexFromOpenweather() {
         if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration    
         
             if(Math.ceil(currentScrollTopValue) + $(window).height() >= $(document).height()){
-                $('.movingTrump').css('background-image','url(../images/trump_iddle.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(../images/TrumpIddle.png)').css('background-position-y','0')
             }else{
-                $('.movingTrump').css('background-image','url(../images/trump_run.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(../images/TrumpRun.png)').css('background-position-y','0')
             };
         
         }else{
