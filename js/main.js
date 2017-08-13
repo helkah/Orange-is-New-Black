@@ -78,7 +78,7 @@ function loadUvIndexFromOpenweather() {
       
         if (uVIndexValue<=2){
             
-            urlAdress = 'url(../images/TrumpSign_mad.png)';
+            urlAdress = 'url(../images/TrumpSignMad.png)';
             speachText = 'This place sucks! UV Index is ';
             protectionRuleClass = '.lowProtectionRule';
             
@@ -87,7 +87,7 @@ function loadUvIndexFromOpenweather() {
         
         if (uVIndexValue>2 && uVIndexValue<=5){
             
-            urlAdress = 'url(../images/TrumpSign_mad.png)';
+            urlAdress = 'url(../images/TrumpSignMad.png)';
             speachText = 'This place sucks! UV Index is ';
             protectionRuleClass = '.moderateProtectionRule';
             
@@ -96,7 +96,7 @@ function loadUvIndexFromOpenweather() {
                 
         if (uVIndexValue>5 && uVIndexValue<=7){
             
-            urlAdress = 'url(../images/TrumpSign_sad.png)';
+            urlAdress = 'url(../images/TrumpSignSad.png)';
             speachText = 'Not even close! UV Index is ';
             protectionRuleClass = '.highProtectionRule';
             
@@ -105,7 +105,7 @@ function loadUvIndexFromOpenweather() {
       
         if (uVIndexValue>7 && uVIndexValue<=10){
             
-            urlAdress = 'url(../images/TrumpSign_laughing.png)';
+            urlAdress = 'url(../images/TrumpSignLaughing.png)';
             speachText = 'Hell yeah! UV Index is ';
             protectionRuleClass = '.veryHighProtectionRule';
             
@@ -114,7 +114,7 @@ function loadUvIndexFromOpenweather() {
       
         if(uVIndexValue>10){
             
-            urlAdress = 'url(../images/TrumpSign_laughing.png)';
+            urlAdress = 'url(../images/TrumpSignLaughing.png)';
             speachText = 'We`re goona die! UV Index is ';
             protectionRuleClass = '.extremeProtectionRule';
             
@@ -152,7 +152,7 @@ function loadUvIndexFromOpenweather() {
             if(currentScrollTopValue != 0){
                 $('.movingTrump').css('background-image','url(../images/trump_run.png)').css('background-position-y','512px');
             }else{   
-                $('.movingTrump').css('background-image','url(../images/trump_iddle.png)').css('background-position-y','0');
+                $('.movingTrump').css('background-image','url(../images/trumpIddle.png)').css('background-position-y','0');
             };
         }
        
