@@ -53,7 +53,7 @@ function loadUvIndexFromOpenweather() {
              var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
              var apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
  
-             var urlAdress = 'http://api.openweathermap.org/data/2.5/uvi?lat=';
+             var urlAdress = 'https://api.openweathermap.org/data/2.5/uvi?lat=';
              var apiKey = config.MY_KEY_OPENWEATHERMAP;
         
               $.ajax({
