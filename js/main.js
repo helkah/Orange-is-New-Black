@@ -142,17 +142,17 @@ function loadUvIndexFromOpenweather() {
         if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration    
         
             if(Math.ceil(currentScrollTopValue) + $(window).height() >= $(document).height()){
-                $('.movingTrump').css('background-image','url(../images/TrumpIddle.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(../image/TrumpIddle.png)').css('background-position-y','0')
             }else{
-                $('.movingTrump').css('background-image','url(../images/TrumpRun.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(../image/TrumpRun.png)').css('background-position-y','0')
             };
         
         }else{
         
             if(currentScrollTopValue != 0){
-                $('.movingTrump').css('background-image','url(../images/trump_run.png)').css('background-position-y','512px');
+                $('.movingTrump').css('background-image','url(../image/trumpRun.png)').css('background-position-y','512px');
             }else{   
-                $('.movingTrump').css('background-image','url(../images/trumpIddle.png)').css('background-position-y','0');
+                $('.movingTrump').css('background-image','url(../image/trumpIddle.png)').css('background-position-y','0');
             };
         }
        

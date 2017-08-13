@@ -38,7 +38,7 @@ function init() {
         position: latLng, //identifying the initial location of the marker(required)
         title: 'Sunbathing Place',
         map: map,//specifies the Map on which to place the marker
-        icon: '/images/Marker.PNG',
+        icon: '/image/Marker.PNG',
         draggable: true 
     });
     
