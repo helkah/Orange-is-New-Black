@@ -24,4 +24,8 @@ The Orange-is-New-Black is compatible with devices of all sizes, and consistent 
 - [Google Maps APIs](https://developers.google.com/maps/)
 - [OpenWheatherMap UV Index API](https://openweathermap.org/api/uvi)
 - [Chart.js](http://www.chartjs.org/)
-- [Node.js]
+- [Node.js](https://nodejs.org/en/)
+
+## [<i class="fa fa-balance-scale" aria-hidden="true"></i>License](http://unlicense.org)
+
+The Unlicense
