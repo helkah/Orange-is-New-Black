@@ -3,21 +3,21 @@
 <table>
 <tr>
 <td>
-    Checkout the best sunbathing places with Donald Trump - https://helkah.github.io/Orange-is-New-Black/
+    Checkout the best sunbathing places with Donald Trump - https://helkah.github.io/Orange-is-New-Black/<br>
     Orange is New Black is my first website project!
 </td>
 </tr>
 </table>
 
-##Site
+## Site
 
 https://helkah.github.io/Orange-is-New-Black/
 
-##Mobile Support
+## Mobile Support
 
 The Orange-is-New-Black is compatible with devices of all sizes, and consistent improvements are being made.
 
-##Built with
+## Built with
 
 - [SASS](http://sass-lang.com/)
 - [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp)
