@@ -3,8 +3,8 @@
 <table>
 <tr>
 <td>
-    Checkout the best sunbathing places with Donald Trump - https://helkah.github.io/Orange-is-New-Black/<br>
-    Orange is New Black is my first website project!
+    Check out todays best sunbathing places with Donald Trump<br>
+    Orange is The New Black website is my final project for Coders Lab bootcamp!
 </td>
 </tr>
 </table>
@@ -26,6 +26,6 @@ The Orange-is-New-Black is compatible with devices of all sizes, and consistent 
 - [Chart.js](http://www.chartjs.org/)
 - [Node.js](https://nodejs.org/en/)
 
-## [<i class="fa fa-balance-scale" aria-hidden="true"></i>License](http://unlicense.org)
+## License
 
-The Unlicense
+[The Unlicense](http://unlicense.org)
