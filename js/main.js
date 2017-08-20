@@ -78,7 +78,7 @@ function loadUvIndexFromOpenweather() {
       
         if (uVIndexValue<=2){
             
-            urlAdress = 'url(../images/TrumpSignMad.png)';
+            urlAdress = 'url(images/TrumpSignMad.png)';
             speachText = 'This place sucks! UV Index is ';
             protectionRuleClass = '.lowProtectionRule';
             
@@ -87,7 +87,7 @@ function loadUvIndexFromOpenweather() {
         
         if (uVIndexValue>2 && uVIndexValue<=5){
             
-            urlAdress = 'url(../images/TrumpSignMad.png)';
+            urlAdress = 'url(images/TrumpSignMad.png)';
             speachText = 'This place sucks! UV Index is ';
             protectionRuleClass = '.moderateProtectionRule';
             
@@ -96,7 +96,7 @@ function loadUvIndexFromOpenweather() {
                 
         if (uVIndexValue>5 && uVIndexValue<=7){
             
-            urlAdress = 'url(../images/TrumpSignSad.png)';
+            urlAdress = 'url(images/TrumpSignSad.png)';
             speachText = 'Not even close! UV Index is ';
             protectionRuleClass = '.highProtectionRule';
             
@@ -105,7 +105,7 @@ function loadUvIndexFromOpenweather() {
       
         if (uVIndexValue>7 && uVIndexValue<=10){
             
-            urlAdress = 'url(../images/TrumpSignLaughing.png)';
+            urlAdress = 'url(images/TrumpSignLaughing.png)';
             speachText = 'Hell yeah! UV Index is ';
             protectionRuleClass = '.veryHighProtectionRule';
             
@@ -114,7 +114,7 @@ function loadUvIndexFromOpenweather() {
       
         if(uVIndexValue>10){
             
-            urlAdress = 'url(../images/TrumpSignLaughing.png)';
+            urlAdress = 'url(images/TrumpSignLaughing.png)';
             speachText = 'We`re goona die! UV Index is ';
             protectionRuleClass = '.extremeProtectionRule';
             
@@ -142,17 +142,17 @@ function loadUvIndexFromOpenweather() {
         if (currentScrollTopValue > lastScrollTopValue){ //lastScrollTopValue global declaration    
         
             if(Math.ceil(currentScrollTopValue) + $(window).height() >= $(document).height()){
-                $('.movingTrump').css('background-image','url(../images/TrumpIddle.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(images/TrumpIddle.png)').css('background-position-y','0')
             }else{
-                $('.movingTrump').css('background-image','url(../images/TrumpRun.png)').css('background-position-y','0')
+                $('.movingTrump').css('background-image','url(images/TrumpRun.png)').css('background-position-y','0')
             };
         
         }else{
         
             if(currentScrollTopValue != 0){
-                $('.movingTrump').css('background-image','url(../images/TrumpRun.png)').css('background-position-y','512px');
+                $('.movingTrump').css('background-image','url(images/TrumpRun.png)').css('background-position-y','512px');
             }else{   
-                $('.movingTrump').css('background-image','url(../images/TrumpIddle.png)').css('background-position-y','0');
+                $('.movingTrump').css('background-image','url(images/TrumpIddle.png)').css('background-position-y','0');
             };
         }
        
