@@ -2,22 +2,22 @@ $(function(){
   
   ////////////VARIABLES/////////////////
     
-  var uvIndexElement = $("#uvIndex");
-  var latitudeInput = $("#gllpLatitude");
-  var longitudeInput = $("#gllpLongitude");
-  var clickHereBtnForMobile =  $('#showTrumpBtn');
-  var showMapBtnForMobile =  $('#showMapBtn'); 
-  var btnForTabletAndDesktop = $(".forTabletAndDesktopBtn");
-  var lastScrollTopValue = 0;
+  let uvIndexElement = $("#uvIndex");
+  let latitudeInput = $("#gllpLatitude");
+  let longitudeInput = $("#gllpLongitude");
+  let clickHereBtnForMobile =  $('#showTrumpBtn');
+  let showMapBtnForMobile =  $('#showMapBtn'); 
+  let btnForTabletAndDesktop = $(".forTabletAndDesktopBtn");
+  let lastScrollTopValue = 0;
      
     
   ////////////FUNCTIONS/////////////////
   function loadLocationKey(){
       
-      var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
-      var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
-      var urlAdress = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey='
-      var apiKey = config.MY_KEY_ACCUWEATHER;
+    let latitudeValue = (Math.round((latitudeInput.text())*100))/100;
+    let longitudeValue = (Math.round((longitudeInput.text())*100))/100;
+    let urlAdress = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey='
+    let apiKey = config.MY_KEY_ACCUWEATHER;
       
       
             $.ajax({
@@ -33,8 +33,8 @@ $(function(){
     
   function loadUvIndexFromAccuweather(locationKey) {
       
-        var urlAdress = 'http://dataservice.accuweather.com/currentconditions/v1/';
-        var apiKey = config.MY_KEY_ACCUWEATHER;
+        let urlAdress = 'http://dataservice.accuweather.com/currentconditions/v1/';
+        let apiKey = config.MY_KEY_ACCUWEATHER;
       
         $.ajax({
             url: urlAdress + locationKey + "?apikey=" + apiKey + "&language=pl&details=true" 
@@ -49,12 +49,12 @@ $(function(){
     
 function loadUvIndexFromOpenweather() {
         
-             var latitudeValue = (Math.round((latitudeInput.text())*100))/100;
-             var longitudeValue = (Math.round((longitudeInput.text())*100))/100;
-             var apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
+             let latitudeValue = (Math.round((latitudeInput.text())*100))/100;
+             let longitudeValue = (Math.round((longitudeInput.text())*100))/100;
+             //let apiKey = '&appid=e5a7071f5e0bc6fcbdc4d42771a1cc8f';
  
-             var urlAdress = 'https://api.openweathermap.org/data/2.5/uvi?lat=';
-             var apiKey = config.MY_KEY_OPENWEATHERMAP;
+             let urlAdress = 'https://api.openweathermap.org/data/2.5/uvi?lat=';
+             let apiKey = config.MY_KEY_OPENWEATHERMAP;
         
               $.ajax({
              	   url: urlAdress + latitudeValue + "&lon=" + longitudeValue + "&appid=" + apiKey 
@@ -67,10 +67,10 @@ function loadUvIndexFromOpenweather() {
     
   function showWhatDonaldSay(givenUvIndex){
         
-        var uVIndexValue = givenUvIndex; 
-        var urlAdress = '';
-        var speachText = '';
-        var protectionRuleClass = '';
+        let uVIndexValue = givenUvIndex; 
+        let urlAdress = '';
+        let speachText = '';
+        let protectionRuleClass = '';
         
         $(".protectionRules").css('display','none');
       
@@ -124,7 +124,7 @@ function loadUvIndexFromOpenweather() {
     
     function changeDonaldSpeach(url,speach,uV,selector){
         
-        var donaldImageElement = $('.donaldSign');
+        let donaldImageElement = $('.donaldSign');
         
         donaldImageElement.animate({'opacity': 0}, 1000, function () {
                 donaldImageElement.css('background-image',url);
@@ -161,7 +161,7 @@ function loadUvIndexFromOpenweather() {
     
     function makeHeaderSticky(currentScrollTopValue){ 
         
-        var stickyNavTop = $('header').offset().top;// offset gets current coordinates relative to document (top,left)
+        let stickyNavTop = $('header').offset().top;// offset gets current coordinates relative to document (top,left)
         
         if (currentScrollTopValue  > stickyNavTop) { 
             $('header > div').addClass('sticky');
@@ -196,9 +196,9 @@ function loadUvIndexFromOpenweather() {
     
     function scrollToTargetSection($element){  
         
-        var scrollPlaceid = $element.children().attr('href');
-        var menuHeight = $('.dropDownMenu').height();
-        var headerHeight = $('header').height();
+        let scrollPlaceid = $element.children().attr('href');
+        let menuHeight = $('.dropDownMenu').height();
+        let headerHeight = $('header').height();
 
     
         if (headerHeight<menuHeight){ //for mobile and tablet
@@ -239,7 +239,7 @@ function loadUvIndexFromOpenweather() {
   
     $(window).on('scroll',function(event){
     
-        var currentScrollTopValue = $(this).scrollTop();// scrollTop gets current vertical position of the scroll bar
+        let currentScrollTopValue = $(this).scrollTop();// scrollTop gets current vertical position of the scroll bar
     
         spriteAnimation(currentScrollTopValue);
         makeHeaderSticky(currentScrollTopValue); 
